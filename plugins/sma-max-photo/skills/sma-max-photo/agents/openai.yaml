@@ -1,0 +1,5 @@
+interface:
+  display_name: "SMA Max photo"
+  short_description: "Put Max, the SaveMaxAuto mascot, into brand photos the approved way"
+policy:
+  allow_implicit_invocation: true

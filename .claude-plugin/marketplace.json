@@ -1,0 +1,12 @@
+{
+  "name": "sma-brand",
+  "description": "SaveMaxAuto brand skills for Claude Code and Codex",
+  "owner": { "name": "SaveMaxAuto brand team" },
+  "plugins": [
+    {
+      "name": "sma-max-photo",
+      "source": "./plugins/sma-max-photo",
+      "description": "Max the mascot in brand photos: rules, prompts, references, fix scripts"
+    }
+  ]
+}
