@@ -1,0 +1,539 @@
+{
+ "about": "Every Higgsfield reference the skill uses, as a file in this package. 'ids' lists the original Higgsfield ids (jobs or media) that this file stands for in references/*.md and SKILL.md. scripts/ids.py uploads these files into the user's own Higgsfield workspace and maps each original id to the new one.",
+ "uploads": [
+  {
+   "key": "max.BO-6",
+   "file": "assets/elements/max/01-BO-6.jpg",
+   "ids": [
+    "3394863f-6981-426a-a55e-6400056a0900"
+   ],
+   "what": "Max master photo BO-6 (attach to every Max frame, look only)"
+  },
+  {
+   "key": "max.TA-1",
+   "file": "assets/elements/max/02-TA-1.jpg",
+   "ids": [
+    "dc637319-6e29-4660-b100-7e815f154601"
+   ],
+   "what": "Max side view TA-1 (body proportions)"
+  },
+  {
+   "key": "max.TA-2",
+   "file": "assets/elements/max/03-TA-2.jpg",
+   "ids": [
+    "b51deb9d-601f-4745-9621-c64be2ae61de"
+   ],
+   "what": "Max front, sitting"
+  },
+  {
+   "key": "max.TA-3",
+   "file": "assets/elements/max/04-TA-3.jpg",
+   "ids": [
+    "16f822e8-1a39-49a5-9c77-e89be4f43d1c"
+   ],
+   "what": "Max three-quarter, standing"
+  },
+  {
+   "key": "max.TA-5",
+   "file": "assets/elements/max/05-TA-5.jpg",
+   "ids": [
+    "a92d51cd-bbe8-42d3-8fdd-11dae5d3c31c"
+   ],
+   "what": "Max canonical face, front"
+  },
+  {
+   "key": "max.TA-6",
+   "file": "assets/elements/max/06-TA-6.jpg",
+   "ids": [
+    "76795864-d94c-4df8-8c65-454e783ca598"
+   ],
+   "what": "Max canonical face, profile"
+  },
+  {
+   "key": "max.TA-4",
+   "file": "assets/angles/TA-4-rear-3q.jpg",
+   "ids": [
+    "48bab5dd-f301-4ba8-91e0-8eef0f4fe7bd"
+   ],
+   "what": "Max rear three-quarter (pose or angle reference only; not part of the Element)"
+  },
+  {
+   "key": "cast.mom-1",
+   "file": "assets/elements/cast/mom-1.jpg",
+   "ids": [
+    "b6a0854d-f16f-45e7-86ae-a150cf65f221"
+   ],
+   "what": "Mom character sheet"
+  },
+  {
+   "key": "cast.mom-2",
+   "file": "assets/elements/cast/mom-2.jpg",
+   "ids": [
+    "53b850cc-7610-4101-b8a6-fa554f1843f4"
+   ],
+   "what": "Mom in an approved scene"
+  },
+  {
+   "key": "cast.dad-1",
+   "file": "assets/elements/cast/dad-1.jpg",
+   "ids": [
+    "31eb8f77-8324-4b78-a5f8-2bd8e4d350d2"
+   ],
+   "what": "Dad character sheet"
+  },
+  {
+   "key": "cast.dad-2",
+   "file": "assets/elements/cast/dad-2.jpg",
+   "ids": [
+    "291c2ace-5f50-4615-8d09-cc9c2209ed15"
+   ],
+   "what": "Dad in an approved scene"
+  },
+  {
+   "key": "cast.toddler-1",
+   "file": "assets/elements/cast/toddler-1.jpg",
+   "ids": [
+    "25495c3a-6795-4113-b500-e75132cba3f7"
+   ],
+   "what": "Toddler character sheet"
+  },
+  {
+   "key": "cast.toddler-2",
+   "file": "assets/elements/cast/toddler-2.jpg",
+   "ids": [
+    "71832419-d364-402a-851e-750a756379d9"
+   ],
+   "what": "Toddler in an approved scene"
+  },
+  {
+   "key": "cast.woman-1",
+   "file": "assets/elements/cast/woman-1.jpg",
+   "ids": [
+    "4e1cf83e-e6fd-4381-aa6a-62f66a854731"
+   ],
+   "what": "Woman driver character sheet"
+  },
+  {
+   "key": "cast.woman-2",
+   "file": "assets/elements/cast/woman-2.jpg",
+   "ids": [
+    "199cc709-c9f0-4764-8bc9-0f1679bd73db"
+   ],
+   "what": "Woman driver in an approved scene"
+  },
+  {
+   "key": "frame.SC-1",
+   "file": "assets/cast-frames/SC-1-family.jpg",
+   "ids": [
+    "f12d9610-9e69-445d-9292-a4e8cf0c32ac"
+   ],
+   "what": "Approved cast frame: family with Max"
+  },
+  {
+   "key": "frame.SC-3",
+   "file": "assets/cast-frames/SC-3-woman.jpg",
+   "ids": [
+    "7583f0c7-5027-49dd-b5ec-eebc7b862c1d"
+   ],
+   "what": "Approved cast frame: woman driver with Max"
+  },
+  {
+   "key": "plate.L1b",
+   "file": "assets/plates/L1b.jpg",
+   "ids": [
+    "4b2f0ae4-3114-4899-864b-bbdb22a8dd64"
+   ],
+   "what": "Plate: family home from the porch"
+  },
+  {
+   "key": "plate.L1c",
+   "file": "assets/plates/L1c.jpg",
+   "ids": [
+    "8ce41d54-946b-483c-80d6-85f4a510e9d6"
+   ],
+   "what": "Plate: family driveway, low"
+  },
+  {
+   "key": "plate.L2a",
+   "file": "assets/plates/L2a.jpg",
+   "ids": [
+    "81b77f7b-77a2-4ac2-9279-be981317cb7b"
+   ],
+   "what": "Plate: family kitchen"
+  },
+  {
+   "key": "plate.L2a-family",
+   "file": "assets/plates/L2a-family.jpg",
+   "ids": [
+    "5a69a802-abf9-4c9d-90b3-61b511017f3e"
+   ],
+   "what": "Plate: family kitchen with the family, no Max"
+  },
+  {
+   "key": "plate.L3a",
+   "file": "assets/plates/L3a.jpg",
+   "ids": [
+    "92eb507c-8f56-4137-8226-e07fadfcfaac"
+   ],
+   "what": "Plate: family SUV interior"
+  },
+  {
+   "key": "plate.L4a",
+   "file": "assets/plates/L4a.jpg",
+   "ids": [
+    "d0a5b008-5edd-4d00-a901-1a98dd29fef2"
+   ],
+   "what": "Plate: woman's crossover at the curb"
+  },
+  {
+   "key": "plate.L6a",
+   "file": "assets/plates/L6a.jpg",
+   "ids": [
+    "f7167a99-f967-4da4-b0f2-32589a52f175"
+   ],
+   "what": "Plate: woman's living room, doorway"
+  },
+  {
+   "key": "plate.L6b",
+   "file": "assets/plates/L6b.jpg",
+   "ids": [
+    "abdebea7-cfa6-4145-8166-d461f10cc891"
+   ],
+   "what": "Plate: woman's living room, sofa"
+  },
+  {
+   "key": "plate.L7a",
+   "file": "assets/plates/L7a.jpg",
+   "ids": [
+    "c840f2e2-8000-4715-af16-8f0446797fd7"
+   ],
+   "what": "Plate: supermarket parking lot"
+  },
+  {
+   "key": "head.P03A",
+   "file": "assets/refs/HEAD-P03A-3q-soft-smile.jpg",
+   "ids": [
+    "09237d8e-7ab6-4691-8fab-76d3f64193af",
+    "951fe868-e5fd-44b6-bc31-145032bc3ca3"
+   ],
+   "what": "Approved head P03A"
+  },
+  {
+   "key": "head.P08D",
+   "file": "assets/refs/HEAD-P08D-profile-up-content.jpg",
+   "ids": [
+    "5ad38080-6e80-498f-aba0-77a7c6ebc526",
+    "f0a9f9db-b41c-40fb-86dc-297414217e0a"
+   ],
+   "what": "Approved head P08D"
+  },
+  {
+   "key": "head.P02A",
+   "file": "assets/refs/HEAD-P02A-profile-content.jpg",
+   "ids": [
+    "7513ef2d-00ec-4d5e-9d21-a83723a2d634"
+   ],
+   "what": "Approved head P02A"
+  },
+  {
+   "key": "head.P06C",
+   "file": "assets/refs/HEAD-P06C-open-smile-tongue.jpg",
+   "ids": [
+    "9151d439-06bd-48a5-8b2a-82a1f7c0e4e4"
+   ],
+   "what": "Approved head P06C (use for the mouth)"
+  },
+  {
+   "key": "head.P03C",
+   "file": "assets/refs/HEAD-P03C-evening-3q.jpg",
+   "ids": [
+    "3e017010-f656-4dad-a009-52a446aec982"
+   ],
+   "what": "Approved head P03C"
+  },
+  {
+   "key": "head.P06A",
+   "file": "assets/refs/HEAD-P06A-open-smile-to-camera.jpg",
+   "ids": [
+    "7e1830e4-01cc-4e2e-bfe7-47a94ed27c40"
+   ],
+   "what": "Approved head P06A"
+  },
+  {
+   "key": "head.TA3-eyes",
+   "file": "assets/refs/HEAD-TA3-eyes-straight.jpg",
+   "ids": [
+    "a8f84e0e-aa01-47c7-a839-3dc904ec7f27"
+   ],
+   "what": "Eye reference, eyes straight ahead"
+  },
+  {
+   "key": "emotion.EX-01",
+   "file": "assets/emotions/MX3-EX-01-happy-tongue.jpg",
+   "ids": [
+    "5045f62c-a5b3-4074-938a-1a2c5a6dac9d"
+   ],
+   "what": "Emotion EX-01 joy"
+  },
+  {
+   "key": "emotion.EX-02",
+   "file": "assets/emotions/MX3-EX-02-head-tilt.jpg",
+   "ids": [
+    "0cdffd24-cf38-44a4-a8e2-7cecff505b2b"
+   ],
+   "what": "Emotion EX-02 head tilt"
+  },
+  {
+   "key": "emotion.EX-03",
+   "file": "assets/emotions/MX3-EX-03-chin-on-paws.jpg",
+   "ids": [
+    "3e25890e-18ca-4296-9e03-33b0595d713f"
+   ],
+   "what": "Emotion EX-03 chin on paws"
+  },
+  {
+   "key": "emotion.EX-04",
+   "file": "assets/emotions/MX3-EX-04-excited-standing.jpg",
+   "ids": [
+    "9dd8e852-213f-4095-85e5-c86ece4afea6"
+   ],
+   "what": "Emotion EX-04 excited"
+  },
+  {
+   "key": "emotion.EX-06",
+   "file": "assets/emotions/MX3-EX-06-trotting.jpg",
+   "ids": [
+    "78c0534b-eb96-4279-bb99-52bfc4dc86a8"
+   ],
+   "what": "Emotion EX-06 trot"
+  },
+  {
+   "key": "emotion.EX-07",
+   "file": "assets/emotions/MX3-EX-07-sleepy.jpg",
+   "ids": [
+    "453e916d-82ad-4960-9724-054784647d45"
+   ],
+   "what": "Emotion EX-07 dozing"
+  },
+  {
+   "key": "emotion.EX-08",
+   "file": "assets/emotions/MX3-EX-08-listening.jpg",
+   "ids": [
+    "6da0bc91-ca11-49d8-91af-c4d811f283f3"
+   ],
+   "what": "Emotion EX-08 listening"
+  },
+  {
+   "key": "emotion.EX-10",
+   "file": "assets/emotions/MX3-EX-10-suspicious-brow.jpg",
+   "ids": [
+    "0beeebaf-4ab9-4ae6-b173-eb3da783caa5"
+   ],
+   "what": "Emotion EX-10 suspicious"
+  },
+  {
+   "key": "twin.G1.frame",
+   "file": "assets/twins/twin-G1.jpg",
+   "ids": [
+    "f2d77f5b-ea1a-4bbe-ac7d-a95fd0c08444"
+   ],
+   "what": "Approved twin frame G1: Max sits beside a standing woman at a gas pump (standing adult, camera at her eye level)"
+  },
+  {
+   "key": "twin.G1.max",
+   "file": "assets/twins/max-G1.jpg",
+   "ids": [
+    "6ad378f6-da4e-4f99-9383-93ffeff79c10"
+   ],
+   "what": "Max cut from approved frame G1 (attach FIRST with the twin method)"
+  },
+  {
+   "key": "twin.G3.frame",
+   "file": "assets/twins/twin-G3.jpg",
+   "ids": [
+    "7e8490e1-0e1d-4ae3-a8ca-edf21f250d4e"
+   ],
+   "what": "Approved twin frame G3: Max sits beside the seated mom on porch steps (seated adults, camera low)"
+  },
+  {
+   "key": "twin.G3.max",
+   "file": "assets/twins/max-G3.jpg",
+   "ids": [
+    "ca858768-ec87-4b13-a143-4089d5afd919"
+   ],
+   "what": "Max cut from approved frame G3 (attach FIRST with the twin method)"
+  },
+  {
+   "key": "twin.F1.frame",
+   "file": "assets/twins/twin-F1.jpg",
+   "ids": [
+    "5ec9656b-29eb-40d0-a29b-4b6b5e304e85"
+   ],
+   "what": "Approved twin frame F1: Max sits at the edge of a picnic blanket by the seated family (seated adults)"
+  },
+  {
+   "key": "twin.F1.max",
+   "file": "assets/twins/max-F1.jpg",
+   "ids": [
+    "30ee9b4a-e8da-4007-917d-fda97a7ccf4c"
+   ],
+   "what": "Max cut from approved frame F1 (attach FIRST with the twin method)"
+  },
+  {
+   "key": "twin.L02.frame",
+   "file": "assets/twins/twin-L02.jpg",
+   "ids": [
+    "d58f46a6-ba01-45ee-8bf3-d1465bc6d6f7"
+   ],
+   "what": "Approved twin frame L02: Max trots on a leash beside the walking woman (walking adult)"
+  },
+  {
+   "key": "twin.L02.max",
+   "file": "assets/twins/max-L02.jpg",
+   "ids": [
+    "d17cb143-b03c-4e5c-86ec-fd33500acad6"
+   ],
+   "what": "Max cut from approved frame L02 (attach FIRST with the twin method)"
+  },
+  {
+   "key": "twin.L05.frame",
+   "file": "assets/twins/twin-L05.jpg",
+   "ids": [
+    "0e21ef91-177d-4157-99fd-78d6f3eafaad"
+   ],
+   "what": "Approved twin frame L05: Max asleep on the rug by the sofa (lying, eyes closed)"
+  },
+  {
+   "key": "twin.L05.max",
+   "file": "assets/twins/max-L05.jpg",
+   "ids": [
+    "3e0a2ded-0987-4f42-8cb9-9737f9ca84e7"
+   ],
+   "what": "Max cut from approved frame L05 (attach FIRST with the twin method)"
+  },
+  {
+   "key": "twin.L06.frame",
+   "file": "assets/twins/twin-L06.jpg",
+   "ids": [
+    "4826ec2c-3fed-403f-89ca-22f38e3bec77"
+   ],
+   "what": "Approved twin frame L06: Max sits by the high chair looking up at the toddler (indoor, standing adults)"
+  },
+  {
+   "key": "twin.L06.max",
+   "file": "assets/twins/max-L06.jpg",
+   "ids": [
+    "6ecf8c76-649d-4564-9d69-e282831033fb"
+   ],
+   "what": "Max cut from approved frame L06 (attach FIRST with the twin method)"
+  },
+  {
+   "key": "twin.L08.frame",
+   "file": "assets/twins/twin-L08.jpg",
+   "ids": [
+    "99d3b16d-27a8-4719-951e-d448080436f5"
+   ],
+   "what": "Approved twin frame L08: Max sits on the porch with the car keys in his mouth (holding an object)"
+  },
+  {
+   "key": "twin.L08.max",
+   "file": "assets/twins/max-L08.jpg",
+   "ids": [
+    "edc811c6-e2ca-4b06-a1f7-d7a2a72a2b20"
+   ],
+   "what": "Max cut from approved frame L08 (attach FIRST with the twin method)"
+  },
+  {
+   "key": "twin.G4.frame",
+   "file": "assets/twins/twin-G4.jpg",
+   "ids": [
+    "6f018974-806b-4ceb-8646-2bcd19dd27af"
+   ],
+   "what": "Approved twin frame G4: Max sits at a lakeside rail looking up (outdoor, standing adult)"
+  },
+  {
+   "key": "twin.G4.max",
+   "file": "assets/twins/max-G4.jpg",
+   "ids": [
+    "3716dd74-205e-4b74-8fad-0f312e7c364a"
+   ],
+   "what": "Max cut from approved frame G4 (attach FIRST with the twin method)"
+  },
+  {
+   "key": "twin.medal",
+   "file": "assets/twins/medal-ref.jpg",
+   "ids": [
+    "a5f61b00-e2d7-49ce-baef-7bb0374d3de4"
+   ],
+   "what": "Close crop of the approved round brass medal with the embossed M (attach LAST)"
+  }
+ ],
+ "elements": [
+  {
+   "key": "element.max",
+   "id": "01ba1fc5-227c-439d-aa29-47ada4e45545",
+   "name": "SMA-Max-v3",
+   "category": "character",
+   "medias": [
+    "max.BO-6",
+    "max.TA-1",
+    "max.TA-2",
+    "max.TA-3",
+    "max.TA-5",
+    "max.TA-6"
+   ],
+   "description": "CANONICAL Max (SMA mascot). Adult ~30 kg stylised Pixar-quality golden retriever, built in real daylight scenes: long legs, long tapered muzzle, cartoon brown eyes with whites, oversized matte nose, matte feature-animation fur, navy collar, round brass medal tag with an embossed M."
+  },
+  {
+   "key": "element.mom",
+   "id": "38f73cfe-d229-4034-a7f3-45c97bbe959e",
+   "name": "SMA-main-family-mom",
+   "category": "character",
+   "medias": [
+    "cast.mom-1",
+    "cast.mom-2"
+   ],
+   "description": "SMA main persona (family): mom, early 30s, Black, voluminous curly hair."
+  },
+  {
+   "key": "element.dad",
+   "id": "463e9ac3-b5de-4a49-afe3-cdd8ee075f2d",
+   "name": "SMA-main-family-dad",
+   "category": "character",
+   "medias": [
+    "cast.dad-1",
+    "cast.dad-2"
+   ],
+   "description": "SMA main persona (family): dad, early 30s, Black, short hair and short beard."
+  },
+  {
+   "key": "element.toddler",
+   "id": "509bd9ee-cdf0-457f-a2d4-7ec63b36ca8b",
+   "name": "SMA-main-family-toddler",
+   "category": "character",
+   "medias": [
+    "cast.toddler-1",
+    "cast.toddler-2"
+   ],
+   "description": "SMA main persona (family): toddler, about 2, short curly hair."
+  },
+  {
+   "key": "element.woman",
+   "id": "b35dc1c6-598f-4ccc-9df1-e941ef01c332",
+   "name": "SMA-main-woman-driver",
+   "category": "character",
+   "medias": [
+    "cast.woman-1",
+    "cast.woman-2"
+   ],
+   "description": "SMA main persona: woman driver, late 30s, brown hair pulled back."
+  }
+ ],
+ "not_bundled": {
+  "4ffcb026-c380-4238-9c57-11812e77515d": "mirrored copy of head P06A: mirror assets/refs/HEAD-P06A-open-smile-to-camera.jpg yourself if you need it",
+  "33a3c7d0": "rejected Element v3.1, never use",
+  "a29f73eb": "rejected Element v2, never use",
+  "0cd7d22f": "rejected continuity Element, never use",
+  "8b6bc9ef-8413-4c61-b0a7-6d8d6d4d011c": "scene test T2 (history only; see board 06)"
+ }
+}

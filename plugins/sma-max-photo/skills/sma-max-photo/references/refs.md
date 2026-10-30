@@ -1,5 +1,7 @@
 # References and Higgsfield ids · SMA Max kit v1.6 (22 Oct 2026)
 
+**These are the original ids.** On any account other than the one that built the kit, run the bootstrap first (`bootstrap.md`) and pass every id through `python3 scripts/ids.py map` / `get`. Every file behind these ids is in `assets/` (list: `assets/manifest.json`).
+
 How to attach: in a Higgsfield generation, pass the id as `medias: [{value: <id>, role: "image_references"}]`. A job id (from a past generation) and a media id (an uploaded file) are both accepted. If a media id stops working, upload the file from `assets/refs/` again (Higgsfield `media_upload`, PUT, `media_confirm`) and use the new id.
 
 ## 1 · Always
@@ -27,14 +29,14 @@ Paste-ready cast lines with wardrobe anchors: `prompts.md` §1. Secondary cast n
 | P03A | soft closed smile · 3/4, eyes to the side (⚠️ the side glance copies over and reads cross-eyed; fix eyes after with TA-3) | media `09237d8e-7ab6-4691-8fab-76d3f64193af` (crop) · full frame job `951fe868-e5fd-44b6-bc31-145032bc3ca3` | `assets/refs/HEAD-P03A-3q-soft-smile.jpg` |
 | P08D | content, looking up · profile | media `5ad38080-6e80-498f-aba0-77a7c6ebc526` (crop) · full frame job `f0a9f9db-b41c-40fb-86dc-297414217e0a` | `assets/refs/HEAD-P08D-profile-up-content.jpg` |
 | P02A | content smile · profile, head level | full frame job `7513ef2d-00ec-4d5e-9d21-a83723a2d634` | `assets/refs/HEAD-P02A-profile-content.jpg` |
-| P06C (fixed) | open smile, tongue, NO teeth · 3/4 (⚠️ eyes glance to the side: on a small or profile head it copies over as side-eye and a smooth head; use it for the MOUTH, not the whole head) | job `9151d439-06bd-48a5-8b2a-82a1f7c0e4e4` (crop) | `assets/refs/HEAD-P06C-open-smile-tongue-no-teeth.jpg` |
-| P03C (fixed, accepted) | happy open smile, tongue, no teeth · 3/4, evening, behind fogged glass | job `3e017010-f656-4dad-a009-52a446aec982` (crop) | `assets/refs/HEAD-P03C-evening-3q.jpg` |
-| P06A (fixed, accepted) | happy open smile, tongue, no teeth · 3/4 toward the camera, eyes centred | job `7e1830e4-01cc-4e2e-bfe7-47a94ed27c40` (crop); mirrored copy media `4ffcb026-c380-4238-9c57-11812e77515d` | `assets/refs/HEAD-P06A-open-smile-to-camera.jpg` |
-| TA-3 (eyes) | happy, eyes straight ahead · 3/4 — use for EYES only (it shows small teeth) | media `a8f84e0e-aa01-47c7-a839-3dc904ec7f27` · full job `16f822e8-1a39-49a5-9c77-e89be4f43d1c` | `assets/refs/HEAD-TA3-eyes-straight.jpg` |
+| P06C (fixed) | open smile, tongue · 3/4 (⚠️ eyes glance to the side: on a small or profile head it copies over as side-eye and a smooth head; use it for the MOUTH, not the whole head) | job `9151d439-06bd-48a5-8b2a-82a1f7c0e4e4` (crop) | `assets/refs/HEAD-P06C-open-smile-tongue.jpg` |
+| P03C (fixed, accepted) | happy open smile, tongue · 3/4, evening, behind fogged glass | job `3e017010-f656-4dad-a009-52a446aec982` (crop) | `assets/refs/HEAD-P03C-evening-3q.jpg` |
+| P06A (fixed, accepted) | happy open smile, tongue · 3/4 toward the camera, eyes centred | job `7e1830e4-01cc-4e2e-bfe7-47a94ed27c40` (crop); mirrored copy media `4ffcb026-c380-4238-9c57-11812e77515d` | `assets/refs/HEAD-P06A-open-smile-to-camera.jpg` |
+| TA-3 (eyes) | happy, eyes straight ahead · 3/4 — use it for the EYES | media `a8f84e0e-aa01-47c7-a839-3dc904ec7f27` · full job `16f822e8-1a39-49a5-9c77-e89be4f43d1c` | `assets/refs/HEAD-TA3-eyes-straight.jpg` |
 | TA-5 | neutral, friendly · front | job `a92d51cd-bbe8-42d3-8fdd-11dae5d3c31c` | `assets/refs/MX3-TA-5-head-front.jpg` |
 | TA-6 | neutral smile · profile | job `76795864-d94c-4df8-8c65-454e783ca598` | `assets/refs/MX3-TA-6-head-profile.jpg` |
 
-**Do not use as a face reference:** EX-01 (brings teeth back), P09A or NREF-1 (raised brow / neutral face that the brand owner rejected on 20 Oct), any frame with folds on the face.
+**Do not use as a face reference:** P09A or NREF-1 (raised brow / neutral face that the brand owner rejected on 20 Oct), any frame with folds on the face.
 
 ## 4 · The 8 emotions (pose/expression reference only, attached last; whole Max frames; never use EX-01 for a face fix)
 EX-01 `5045f62c-a5b3-4074-938a-1a2c5a6dac9d` · EX-02 `0cdffd24-cf38-44a4-a8e2-7cecff505b2b` · EX-03 `3e25890e-18ca-4296-9e03-33b0595d713f` · EX-04 `9dd8e852-213f-4095-85e5-c86ece4afea6` · EX-06 `78c0534b-eb96-4279-bb99-52bfc4dc86a8` · EX-07 `453e916d-82ad-4960-9724-054784647d45` · EX-08 `6da0bc91-ca11-49d8-91af-c4d811f283f3` · EX-10 `0beeebaf-4ab9-4ae6-b173-eb3da783caa5`. Files: `assets/emotions/MX3-EX-*.jpg`, board `assets/boards/02-max-emotions.jpg`.

@@ -2,7 +2,7 @@
 
 These are the plates behind the approved location scenes (board `assets/boards/06-approved-locations.jpg`). Attach the plate as the FIRST image reference and start the scene with: `In the exact location of the first reference photo (keep the place, camera and light exactly)…` (`prompts.md` §1). Generate at 4k on a plate.
 
-The ids are Higgsfield job ids of the graded plate (after any clean-up edit) and work only in the SMA Higgsfield workspace. The image files and the full plate prompts live in the SMA brand repo (`docs/brand/photo-spec/locations/`, `locations.md` §5). A plate freezes the camera and light, so use one plate per camera angle.
+The ids are Higgsfield job ids of the graded plate (after any clean-up edit) and belong to the account that built the kit: on another account map them with `python3 scripts/ids.py map` after the bootstrap (`bootstrap.md`). The plate files are bundled in `assets/plates/` (3072 px wide); the full plate prompts live in the SMA brand repo (`docs/brand/photo-spec/locations.md` §5). A plate freezes the camera and light, so use one plate per camera angle.
 
 | Plate | Place | Used in approved scene | Job id to attach |
 |---|---|---|---|

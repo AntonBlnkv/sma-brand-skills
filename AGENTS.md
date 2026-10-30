@@ -13,6 +13,6 @@ This folder is the `sma-max-photo` skill package of SaveMaxAuto (SMA). It tells 
 ## Editing the package
 - Change rules in `SKILL.md` and details in `references/*.md`; keep paths relative.
 - Bump `version` in `plugins/sma-max-photo/.claude-plugin/plugin.json`, `plugins/sma-max-photo/plugin.json` and the `metadata.version` of `SKILL.md` together, or installed copies will not update.
-- No secrets, API keys, personal emails or phone numbers in this package. Higgsfield Element / job ids are fine (they only work inside the SMA workspace).
+- No secrets, API keys, personal emails or phone numbers in this package. Higgsfield Element / job ids are fine (they only work for the account that created them; other accounts run the bootstrap in `references/bootstrap.md`).
 - The "Prompt skeleton" in `SKILL.md` repeats the Max block, cast lines, emotions and scale lines from `references/prompts.md` word for word. Change both together; `tests/smoke_test.py` fails if they drift apart.
 - Run `python3 tests/smoke_test.py` after changing any script or prompt text.

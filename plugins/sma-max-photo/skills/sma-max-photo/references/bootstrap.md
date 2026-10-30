@@ -1,0 +1,27 @@
+# First run: put Max, the cast and the plates into YOUR Higgsfield account · kit v1.7 (26 Oct 2026)
+
+**Why.** Every Higgsfield id in this skill (the Max Element `01ba1fc5…`, the cast Elements, BO-6, TA-1, the cast frames, the plates, the heads, the emotions) was created by the account of the person who built the kit. Uploads and Elements belong to the account that made them, so on any other account those ids do not work. There is no shared "SMA workspace". This package therefore ships every reference as a file (`assets/manifest.json` lists them) and this procedure recreates them in your account once. After that, `scripts/ids.py map` turns every original id in a prompt into your own id.
+
+**Cost.** Uploads and Element creation run no image generation; generations bill the credits of the workspace that is selected in Higgsfield. Bootstrap once per account (and per workspace, if you switch workspace later).
+
+## The steps (the agent does them with the Higgsfield MCP tools; the person only answers step 1)
+1. **Choose the workspace.** Call `list_workspaces`. Show the person every workspace with its plan and credits and ask which one to use for SMA work (their private one, or a shared team workspace such as their company's). Never pick or switch for them. If the chosen one is not selected, call `select_workspace` with its id only after they said yes (the selection persists for later sessions). **Then call `balance` and check that its credits match the chosen workspace:** in our test (26 Oct) no workspace was selected and Higgsfield still billed and stored everything in the team workspace, not in the private one. Then: `python3 scripts/ids.py workspace <WORKSPACE_ID> <NAME>`.
+2. **Ask for upload slots.** `python3 scripts/ids.py request --batch 1` prints the JSON for `media_upload` (`files`, up to 20). Call `media_upload` with exactly that `files` list. Save the tool's whole JSON result to a file (e.g. `~/.sma-max-photo/upload-1.json`). A result for 20 files is too long to show in the chat: Claude Code saves it to a file by itself and prints the path; use that path. For a single file you can skip the file: `python3 scripts/ids.py put-one FILENAME UPLOAD_URL MEDIA_ID URL` with the values from the result.
+3. **Upload the bytes.** `python3 scripts/ids.py put ~/.sma-max-photo/upload-1.json`. It PUTs every file to its signed URL and records the new media ids. Every line must say `put`. (Uploads need no Higgsfield login on the machine: the signed URL is the permission. The script sends its own User-Agent, because the upload host blocks Python's default one.)
+4. **Confirm.** `python3 scripts/ids.py confirm-list` prints the media ids; call `media_confirm` with `type: "image"` and those `media_ids`; when every result says `uploaded`, run `python3 scripts/ids.py confirmed --all`.
+5. **Repeat 2–4** with `--batch 1` again until `request` prints `nothing left to upload` (it always offers what is still missing). Delete the `upload-*.json` files afterwards: they hold signed upload URLs.
+6. **Recreate the Elements**, in this order: `max`, `mom`, `dad`, `toddler`, `woman`. For each: `python3 scripts/ids.py element max` prints the exact arguments; call `manage_reference_elements` with them (`action: "create"`, same name, category, description and the frames in the same order as the original). Names are unique per workspace; Higgsfield adds a suffix if the name is taken. Wait until the Element's `status` is `completed` (`manage_reference_elements` `action: "get"`), then `python3 scripts/ids.py set-element max <NEW_ELEMENT_ID>`.
+7. **Check.** `python3 scripts/ids.py status` must end with `READY`.
+8. **Parity check (recommended once; example: `assets/boards/16-bootstrap-parity.jpg`).** Generate one Daylight frame with the prompt skeleton, mapped through `ids.py map`, and put Max's head next to `assets/refs/MX3-TA-5-head-front.jpg` and the cast next to `assets/cast-frames/` on a JPG board (`scripts/board.py`). The recreated Max Element must give the same dog as boards 01 and 03. If it does not, stop and tell the brand owner.
+
+## Every frame after that
+- Write the prompt and the attachment list with the ids exactly as the skill gives them, then run it through the map: `python3 scripts/ids.py map prompt.txt` (or `echo "…" | python3 scripts/ids.py map -`). Use the printed text and ids.
+- For a single id: `python3 scripts/ids.py get 3394863f-6981-426a-a55e-6400056a0900` or `python3 scripts/ids.py get max.BO-6`.
+- Exit code 3 / a `warning: … not mapped` line means the bootstrap is not finished: do not generate with the original ids on another account (they fail or, worse, are silently ignored).
+- Your own generations (job ids) need no mapping: they already belong to your account.
+
+## Limits
+- The map lives in `~/.sma-max-photo/ids.json` (or the path in `$SMA_MAX_IDS`). It holds ids and public media URLs, no credentials.
+- One map per workspace. For a second workspace, use another map file: `SMA_MAX_IDS=~/.sma-max-photo/ids-team.json python3 scripts/ids.py …`.
+- The account that built the kit can keep using the original ids without a bootstrap.
+- Not bundled: the mirrored copy of head P06A (mirror the file yourself if needed) and the rejected Elements v3.1, v2 and continuity (never use them).

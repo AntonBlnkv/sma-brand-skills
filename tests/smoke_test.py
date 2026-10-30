@@ -49,6 +49,35 @@ assert np.abs(a[:40, :40] - bg[:40, :40]).max() <= 2, 'recolor touched the backg
 run('recolor_max.py', '--mask', 'mask.png', 'withdog.png', 'x', f'0,0,{W},{H}', 'eve', 'recolored2.png')
 assert (np.asarray(Image.open(os.path.join(tmp, 'recolored2.png'))) == a.astype(np.uint8)).all(), 'option order changed the result'
 
+# 2c resize_max: cut the dog out of WITH using WITHOUT, put him at 150 px tall with paws at (450, 560)
+o = run('resize_max.py', 'nodog.png', 'withdog.png', 'resized.png', '--height', '150', '--feet', '450,560')
+r = np.asarray(Image.open(os.path.join(tmp, 'resized.png'))).astype(int)
+gold = (r[..., 0] - r[..., 2] > 100)
+ys, xs = np.where(gold)
+assert abs(ys.max() - 560) <= 4 and abs((ys.max() - ys.min()) - 150) <= 8, ('resize_max put the dog wrong', ys.min(), ys.max())
+assert not gold[180:470, 600:640].any() or xs.max() < 600, 'resize_max left the old dog behind'
+
+# 2c' resize_max with --green and --person: green silhouette of the dog, magenta adult standing at x 150..230
+gr = Image.fromarray(bg.copy()); dg = ImageDraw.Draw(gr)
+dg.ellipse((300, 180, 640, 470), fill=(0, 255, 0)); dg.ellipse((560, 120, 700, 260), fill=(0, 255, 0)); gr.save(os.path.join(tmp, 'green.png'))
+pe = Image.fromarray(bg.copy()); ImageDraw.Draw(pe).rectangle((150, 120, 230, 560), fill=(255, 0, 255)); pe.save(os.path.join(tmp, 'person.png'))
+o = run('resize_max.py', 'nodog.png', 'withdog.png', 'resized2.png', '--green', 'green.png', '--person', 'person.png', '--side', 'right')
+r = np.asarray(Image.open(os.path.join(tmp, 'resized2.png'))).astype(int)
+ys, xs = np.where(r[..., 0] - r[..., 2] > 100)
+assert abs(ys.max() - 560) <= 6 and abs((ys.max() - ys.min()) - 0.55 * 440) <= 15 and xs.min() > 230, ('--person placement wrong', ys.min(), ys.max(), xs.min())
+
+# 2d ruler
+run('ruler.py', 'withdog.png', 'ruler.jpg', '200,100,800,500')
+assert os.path.exists(os.path.join(tmp, 'ruler.jpg'))
+
+# 2e twin_board: board with the G1 twin crop and two takes; the golden "Max" must be found in the take
+for k in ('G1', 'G3', 'F1', 'L02', 'L05', 'L06', 'L08', 'G4'):
+    for f in (f'max-{k}.jpg', f'twin-{k}.jpg'):
+        assert os.path.exists(os.path.join(SKILL, 'assets', 'twins', f)), 'missing twin file ' + f
+assert os.path.exists(os.path.join(SKILL, 'assets', 'twins', 'medal-ref.jpg')), 'missing medal-ref.jpg'
+run('twin_board.py', 'twin_board.jpg', 'G1', 'Smoke', 'withdog.png', 'withdog.png')
+assert Image.open(os.path.join(tmp, 'twin_board.jpg')).size[0] > 2000, 'twin_board.py wrote a wrong-size board'
+
 # 3 crop + paste_crop: crop of the master (3:2 grown), "edited" (brightened), pasted back
 master = Image.open(MASTER).convert('RGB'); master.save(os.path.join(tmp, 'full.png'))
 o = run('crop.py', 'full.png', '300,200,700,500', 'crop.png')
@@ -101,4 +130,23 @@ assert not re.search('[\u0400-\u04FF]', S.replace('Макс', '')), 'non-English
 for f in os.listdir(os.path.join(SKILL, 'references')):
     assert not re.search('[\u0400-\u04FF]', open(os.path.join(SKILL, 'references', f)).read()), 'non-English text in ' + f
 print('ok   SKILL.md prompt skeleton matches references/prompts.md; no non-English text')
+# 7 manifest + ids.py: every bundled file exists, every id in the docs is either in the manifest or listed as not bundled,
+#   and the id map rewrites a prompt (with a throw-away map file)
+import json
+M = json.load(open(os.path.join(SKILL, 'assets', 'manifest.json')))
+for u in M['uploads']: assert os.path.exists(os.path.join(SKILL, u['file'])), 'missing bundled file ' + u['file']
+known = {i for u in M['uploads'] for i in u['ids']} | {e['id'] for e in M['elements']} | set(M['not_bundled'])
+docs = ''.join(open(os.path.join(SKILL, p)).read() for p in ['SKILL.md'] + ['references/' + f for f in os.listdir(os.path.join(SKILL, 'references'))])
+stray = sorted(set(re.findall(r'[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}', docs)) - known)
+assert not stray, 'ids in the docs with no bundled file: %s' % stray
+env = {'SMA_MAX_IDS': os.path.join(tmp, 'ids.json')}
+fake = {'workspace': {'id': 'test'}, 'uploads': {'max.BO-6': {'media_id': '11111111-1111-4111-8111-111111111111', 'url': 'https://x/y.jpg', 'confirmed': True}},
+        'elements': {'element.max': '22222222-2222-4222-8222-222222222222'}, 'map': {}}
+json.dump(fake, open(env['SMA_MAX_IDS'], 'w'))
+r = subprocess.run([sys.executable, os.path.join(SCRIPTS, 'ids.py'), 'map', '-'], input='<<<01ba1fc5-227c-439d-aa29-47ada4e45545>>> + 3394863f-6981-426a-a55e-6400056a0900',
+                   capture_output=True, text=True, env={**os.environ, **env})
+assert r.returncode == 0 and '<<<22222222-2222-4222-8222-222222222222>>>' in r.stdout and '11111111-1111-4111-8111-111111111111' in r.stdout, r.stdout + r.stderr
+r = subprocess.run([sys.executable, os.path.join(SCRIPTS, 'ids.py'), 'get', 'max.TA-1'], capture_output=True, text=True, env={**os.environ, **env})
+assert r.returncode == 3 and 'not mapped' in r.stderr, 'unmapped id must warn and exit 3'
+print('ok   manifest (%d files) + ids.py map/get' % len(M['uploads']))
 print('ALL OK ->', tmp)
