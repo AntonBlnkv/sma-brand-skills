@@ -8,7 +8,7 @@ Usage (run from the skill folder; the map lives in ~/.sma-max-photo/ids.json, or
   python3 scripts/ids.py status                      what is uploaded / created / missing, and which workspace
   python3 scripts/ids.py workspace WS_ID [NAME]      record the Higgsfield workspace you chose (before uploading)
   python3 scripts/ids.py request [--batch N]         JSON for the Higgsfield media_upload tool: the files still to upload
-                                                     (batch N of 20, starting at 1)
+                                                     (batch N of 10, starting at 1)
   python3 scripts/ids.py put RESPONSE.json           save the media_upload result to a file, then run this: it PUTs each
                                                      file to its upload_url and records the media ids
   python3 scripts/ids.py put-one FILENAME UPLOAD_URL MEDIA_ID URL   the same for one file (values from the result)
@@ -27,6 +27,7 @@ import json, os, re, sys, time, urllib.request, urllib.error
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MANIFEST = json.load(open(os.path.join(HERE, 'assets', 'manifest.json')))
 MAP_PATH = os.environ.get('SMA_MAX_IDS', os.path.expanduser('~/.sma-max-photo/ids.json'))
+BATCH = 10   # files per media_upload call: a 20-file result is too long for the chat and gets saved to a file
 UUID = re.compile(r'[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')
 
 def load():
@@ -84,7 +85,7 @@ def main(a):
         if not m.get('workspace'): sys.exit('record the workspace first: ids.py workspace WS_ID')
         todo = [u for u in MANIFEST['uploads'] if not m['uploads'].get(u['key'], {}).get('confirmed')]
         n = int(rest[rest.index('--batch') + 1]) if '--batch' in rest else 1
-        part = todo[(n - 1) * 20:n * 20]
+        part = todo[(n - 1) * BATCH:n * BATCH]
         if not part: print('nothing left to upload'); return 0
         print(json.dumps({'files': [{'filename': upload_name(u['key']), 'content_type': 'image/jpeg'} for u in part]}))
         print('# batch %d: %d files; %d still to upload in total' % (n, len(part), len(todo)), file=sys.stderr)

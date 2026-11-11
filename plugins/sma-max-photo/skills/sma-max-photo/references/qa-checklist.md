@@ -1,6 +1,6 @@
 # QA checklist: every frame with Max · kit v1.6 (22 Oct 2026)
 
-**New frames (twin method): first drop the clear rejects listed in `references/pipeline.md` §A0 step 6, then let the brand owner pick from a `scripts/twin_board.py` board. Do not issue an "is this our Max" verdict yourself: on 29 Oct an agent's verdicts matched the owner's on 11 of 20 frames.** The full table below is for approved frames and their relights.
+**New frames (twin method): first drop the clear rejects listed in `references/pipeline.md` §A0 step 6, then run the people check (step 6a) and the size and place check with `scripts/size_check.py` (step 6d) on every take, then let the brand owner pick from a `scripts/twin_board.py` board. Do not issue an "is this our Max" verdict yourself: on 29 Oct an agent's verdicts matched the owner's on 11 of 20 frames.** The full table below is for approved frames and their relights.
 
 Open the full-resolution file. For check 4, draw the ruler first: `python3 scripts/ruler.py FRAME.png RULER.jpg [x0,y0,x1,y1]` and read the y of the adult's crown and shoes and of Max's crown and paws. Zoom on Max to 100%. Put his head next to the reference head (`assets/refs/`) on one board. Check in this order; the first failure decides the fix (`references/pipeline.md` §C).
 

@@ -116,6 +116,14 @@ for s in sorted(os.listdir(SCRIPTS)):
         r = subprocess.run([sys.executable, os.path.join(SCRIPTS, s), '--help'], capture_output=True, text=True)
         assert r.returncode == 0 and 'Usage' in r.stdout, s + ' --help does not print its usage'
 print('ok   measure_fur.py, board.py CLI, mask_check.jpg, --help on every script')
+# 5c size_check.py: the owner's size standards and the place check give the right verdict
+for args, code in [(['standing', 'H=1792', 'adult=120,1610', 'max=800,1600'], 0), (['standing', 'H=1792', 'adult=120,1610', 'max=700,1600'], 2),
+                   (['standing', 'H=1792', 'adult=120,1610', 'max=800,1700'], 2), (['lying', 'H=1792', 'adulthead=420,560', 'maxhead=900,1130'], 0),
+                   (['lying', 'H=1792', 'adulthead=420,560', 'maxhead=900,1180'], 2), (['seated', 'H=1792', 'adult=300,1600', 'shoulder=620', 'max=600,1590'], 2),
+                   (['toddler', 'H=1792', 'toddler=700', 'max=640'], 1)]:
+    r = subprocess.run([sys.executable, os.path.join(SCRIPTS, 'size_check.py')] + args, capture_output=True, text=True)
+    assert r.returncode == code, 'size_check.py %s gave %d, expected %d: %s' % (args, r.returncode, code, r.stdout)
+print('ok   size_check.py')
 
 # 6 the prompt skeleton in SKILL.md must match references/prompts.md word for word
 import re

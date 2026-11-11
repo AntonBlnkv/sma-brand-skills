@@ -7,7 +7,7 @@ This folder is the `sma-max-photo` skill package of SaveMaxAuto (SMA). It tells 
 - Scope of this version (Phase 1): Max with the approved cast only (the family and the woman driver, Element ids in `references/refs.md` §2), any location, three treatments. A task that needs other people is outside this version: say so and ask the brand owner, never improvise a cast (Phase 2 plan: `references/ROADMAP.md`).
 - Paths inside the skill are relative to the skill folder (the one with `SKILL.md`). Scripts: `scripts/*.py`, Python 3.9+ with `pip install -r scripts/requirements.txt`.
 - Never redesign Max, never fix his fur colour with a model edit (use `scripts/recolor_max.py`), never call a frame clean before the 100% check in `references/qa-checklist.md`.
-- English everywhere: prompts, board labels, review notes and messages (the team is English-speaking).
+- Prompts, ids, board labels and frame records in English, always. Talk to the person in the language they write in.
 - Reviews go out as labelled JPG boards (`scripts/board.py`), never HTML; every message names the next step.
 
 ## Editing the package
